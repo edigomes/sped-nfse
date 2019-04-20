@@ -21,8 +21,8 @@ use NFePHP\NFSe\Models\Abrasf\Rps;
 use NFePHP\NFSe\Models\Abrasf\Factories;
 use NFePHP\NFSe\Common\Tools as ToolsBase;
 
-class Tools extends ToolsBase
-{
+class Tools extends ToolsBase {
+
     public function cancelarNfse($numero, $codigoCancelamento)
     {
         $this->method = 'CancelarNfse';
