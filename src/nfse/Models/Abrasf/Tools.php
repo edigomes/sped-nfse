@@ -20,6 +20,7 @@ use SimpleXMLElement;
 use NFePHP\NFSe\Models\Abrasf\Rps;
 use NFePHP\NFSe\Models\Abrasf\Factories;
 use NFePHP\NFSe\Common\Tools as ToolsBase;
+use NFePHP\Common\Soap\SoapCurl;
 
 class Tools extends ToolsBase {
 
@@ -182,12 +183,17 @@ class Tools extends ToolsBase {
         return $this->sendRequest('', $message);
     }
     
-    protected function sendRequest($url, $message)
-    {
+    /**
+     * 
+     * @param type $url
+     * @param type $message
+     * @return type
+     */
+    protected function sendRequest($url, $message) {
         //no caso do ISSNET o URL é unico para todas as ações
         $url = $this->url[$this->config->tpAmb];
         if (!is_object($this->soap)) {
-            $this->soap = new \NFePHP\NFSe\Common\SoapCurl($this->certificate);
+            $this->soap = new SoapCurl($this->certificate);
         }
         //formata o xml da mensagem para o padão esperado pelo webservice
         $dom = new \DOMDocument('1.0', 'UTF-8');
