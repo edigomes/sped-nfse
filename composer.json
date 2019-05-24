@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-          "NFePHP\\NFSe\\": "src/"
+          "NFePHP\\NFSe\\": "src/nfse/"
         } 
     },
     "autoload-dev": {
